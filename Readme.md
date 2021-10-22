@@ -46,7 +46,8 @@ RUN dir
 RUN python3 -m default_modeling.train --datafolder ${TRAINING_FOLDER} \
                                       --model-dir ${MODEL_DIR} \
                                       --model-name ${MODEL_NAME}
-ENTRYPOINT ["python3", "-m"]```
+ENTRYPOINT ["python3", "-m"]
+```
 ## Build Image from DockerFile
 
 
