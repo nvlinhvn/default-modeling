@@ -19,7 +19,7 @@
 
 ## Folder Structure
 
-![alt](img/tree folder.PNG)
+![alt](img/tree_structure.png)
 
 ## DockerFile Contents
 
@@ -28,6 +28,7 @@
 - New csv data are stored inside this `test_data` folder
 - Container will mount to this `test_data` folder
 - And prediction result will be locally stored
+```python
 FROM python:3.8
 RUN pwd
 RUN dir
@@ -45,7 +46,7 @@ RUN dir
 RUN python3 -m default_modeling.train --datafolder ${TRAINING_FOLDER} \
                                       --model-dir ${MODEL_DIR} \
                                       --model-name ${MODEL_NAME}
-ENTRYPOINT ["python3", "-m"]
+ENTRYPOINT ["python3", "-m"]```
 ## Build Image from DockerFile
 
 
@@ -105,9 +106,6 @@ ENTRYPOINT ["python3", "-m"]
 ```python
 !docker run -t default_model:latest  unittest discover default_modeling
 ```
-
-    folder view
-    [PosixPath('bin'), PosixPath('sys'), PosixPath('dev'), PosixPath('var'), PosixPath('mnt'), PosixPath('opt'), PosixPath('proc'), PosixPath('boot'), PosixPath('usr'), PosixPath('lib'), PosixPath('media'), PosixPath('etc'), PosixPath('sbin'), PosixPath('root'), PosixPath('lib64'), PosixPath('srv'), PosixPath('run'), PosixPath('tmp'), PosixPath('home'), PosixPath('default_modeling'), PosixPath('train_data')]
     Found the following test data
     default_modeling/tests/data/test_sample_1.csv
     ..
