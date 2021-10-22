@@ -150,8 +150,8 @@ ENTRYPOINT ["python3", "-m"]
 - Decision threshold on the probability of default would probably depend on credit policy. There could be several cutoff points or a mathematical cost function rather than a fixed decision threshold. Therefore, binary metrics like F1, Recall, or Precision is not meaningful in this situation. And the output should be a prediction in probability.
 - KS-statistic (between P(prediction|truth = 1) and P(prediction|truth = 0) to quantify the distance between 2 classes) are used to evaluate model.
 
-ROC AUC Curve       | Normalized KS Distribution of 2 types of users (class 0 = non-default and class 1 = default)
-![alt](img/AUC.png) | ![alt](img/KS_Curve.png)
+<pre> ROC AUC Curve       Normalized KS Distribution of 2 types of users (class 0 = non-default and class 1 = default) </pre>
+![alt](img/AUC.png) ![alt](img/KS_Curve.png)
 
 ### Conclusions
 
