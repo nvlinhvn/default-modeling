@@ -19,7 +19,7 @@
 
 ## Folder Structure
 
-![title](img/tree folder.PNG)
+![alt](img/tree folder.PNG)
 
 ## DockerFile Contents
 
