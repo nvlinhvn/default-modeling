@@ -18,7 +18,9 @@
 - pandas, numpy, category_encoders, sklearn, scipy, joblib
 
 ## Folder Structure
+
 ![title](img/tree folder.PNG)
+
 ## DockerFile Contents
 
 - My Local Working Directory named `/home/jupyter`
