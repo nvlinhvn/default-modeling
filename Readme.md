@@ -153,6 +153,7 @@ ENTRYPOINT ["python3", "-m"]
 - Right plot: Normalized KS Distribution of 2 types of users:
   * class 0: non-default
   * class 1: default
+
 ![alt](img/AUC.png) ![alt](img/KS_Curve.png)
 
 ### Conclusions
