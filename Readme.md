@@ -18,38 +18,7 @@
 - pandas, numpy, category_encoders, sklearn, scipy, joblib
 
 ## Folder Structure
-├── DockerFile
-├── Readme.ipynb
-├── WriteFile.ipynb
-├── data
-├── default_modeling
-│   ├── __init__.py
-│   ├── default_modeling
-│   │   ├── __init__.py
-│   │   ├── interface
-│   │   │   ├── __init__.py
-│   │   │   │── predict.py
-│   │   │   │── train.py
-│   │   │   └── risk_model.joblib
-│   │   └── utils
-│   │       ├── __init__.py
-│   │       ├── load.py
-│   │       └── preproc.py
-│   ├── predict.py
-│   ├── setup.py
-│   ├── tests
-│   │   ├── __init__.py
-│   │   ├── data
-│   │   │   └── test_sample_1.csv
-│   │   ├── test_case_base.py
-│   │   └── test_data_handling.py
-│   └── train.py
-├── requirements.txt
-├── test_data
-│   ├── test_set_1.csv
-│   └── test_set_2.csv
-├── train_data
-│   └── train_set.csv
+![title](img/tree folder.png)
 ### DockerFile Contents
 
 - My Local Working Directory named `/home/jupyter`
@@ -184,6 +153,10 @@ ENTRYPOINT ["python3", "-m"]
 ROC AUC Curve | Normalized KS Distribution of 2 types of users (class 0 = non-default and class 1 = default)
 - | - 
 ![alt](img/AUC.png) | ![alt](img/KS_Curve.png)
+
+ROC AUC Curve | Normalized KS Distribution of 2 types of users (class 0 = non-default and class 1 = default)
+- | - 
+<img src="img/AUC.png" alt="AUC" style="width:100px;"/> | <img src="img/AUC.png" alt="AUC" style="width:100px;"/>
 
 ### Conclusions
 
