@@ -1,4 +1,4 @@
-## Problem Definition
+#### Problem Definition
 
 - predict the probability of default for each user id in risk modeling
 - default = 1 means defaulted users, default = 0 means otherwise
@@ -14,12 +14,12 @@
 - default: (or target) boolean (0, or 1) <br>
 - Categorical, and numerical features are defined in default_modeling.utils.preproc (function feature_definition)
 
-### Package Requirements:
+#### Package Requirements:
 - pandas, numpy, category_encoders, sklearn, scipy, joblib
 
-## Folder Structure
+#### Folder Structure
 ![title](img/tree folder.png)
-### DockerFile Contents
+#### DockerFile Contents
 
 - My Local Working Directory named `/home/jupyter`
 - `train_data` folder are copied inside container to train and save a random forest .joblib model
@@ -44,7 +44,7 @@ RUN python3 -m default_modeling.train --datafolder ${TRAINING_FOLDER} \
                                       --model-dir ${MODEL_DIR} \
                                       --model-name ${MODEL_NAME}
 ENTRYPOINT ["python3", "-m"]
-# Build Image from DockerFile
+#### Build Image from DockerFile
 
 
 ```python
@@ -97,7 +97,7 @@ ENTRYPOINT ["python3", "-m"]
     Successfully tagged default_model:latest
 
 
-# Run Unit Test in Image
+#### Run Unit Test in Image
 
 
 ```python
@@ -115,7 +115,7 @@ ENTRYPOINT ["python3", "-m"]
     OK
 
 
-# USE IMAGE TO PREDICT NEW DATA 1
+#### USE IMAGE TO PREDICT NEW DATA 1
 
 
 ```python
@@ -130,7 +130,7 @@ ENTRYPOINT ["python3", "-m"]
     Finish after 0.4429047107696533 s
     ...to csv ./test_data/test_set_1.csv
 
-
+#### USE IMAGE TO PREDICT NEW DATA 2
 
 ```python
 !docker run -v /home/jupyter/test_data:/test_data \
@@ -145,7 +145,7 @@ ENTRYPOINT ["python3", "-m"]
     ...to csv ./test_data/test_set_2.csv
 
 
-### We have prediction in local folder test_data. Evaluate with Metrics
+#### We have prediction in local folder test_data. Evaluate with Metrics
 
 - Decision threshold on the probability of default would probably depend on credit policy. There could be several cutoff points or a mathematical cost function rather than a fixed decision threshold. Therefore, binary metrics like F1, Recall, or Precision is not meaningful in this situation. And the output should be a prediction in probability.
 - KS-statistic (between P(prediction|truth = 1) and P(prediction|truth = 0) to quantify the distance between 2 classes) are used to evaluate model.
@@ -156,7 +156,7 @@ ENTRYPOINT ["python3", "-m"]
 
 ![alt](img/AUC.png) ![alt](img/KS_Curve.png)
 
-### Conclusions & Future Work
+#### Conclusions & Future Work
 
 - With KS score = 0.66 and small p-value, this means the predictor can properly distinguish between default and non-default users (test is significant)
 - Visually, we can observe the clear gap in the KS distribution plot between 2 classes
