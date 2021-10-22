@@ -156,12 +156,8 @@ ENTRYPOINT ["python3", "-m"]
 
 ![alt](img/AUC.png) ![alt](img/KS_Curve.png)
 
-### Conclusions
+### Conclusions & Future Work
 
 - With KS score = 0.66 and small p-value, this means the predictor can properly distinguish between default and non-default users (test is significant)
 - Visually, we can observe the clear gap in the KS distribution plot between 2 classes
-
-
-```python
-
-```
+- In the future, host with AWS Sagemeker endpoint
