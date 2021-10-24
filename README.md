@@ -48,11 +48,11 @@ RUN python3 -m default_modeling.train --datafolder ${TRAINING_FOLDER} \
                                       --model-name ${MODEL_NAME}
 ENTRYPOINT ["python3", "-m"]
 ```
-## Build Image from DockerFile
+## Build Image from Dockerfile
 
 
 ```python
-!docker build -t default_model -f DockerFile .
+!docker build -t default_model -f Dockerfile .
 ```
 
     Sending build context to Docker daemon  66.04MB
