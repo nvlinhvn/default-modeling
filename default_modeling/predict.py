@@ -19,11 +19,8 @@ def predict():
     parser.add_argument("--model-dir", type=str, default=os.environ.get("MODEL_DIR"))
     parser.add_argument("--datafolder", type=str, default=os.environ.get("TESTING_FOLDER"))
     parser.add_argument("--model-name", type=str, default=os.environ.get("MODEL_NAME"))
-    parser.add_argument("--test-file", type=str, default="test_set.csv")
- 
-    parser.add_argument(
-        "--target", type=str, default="default"
-    )
+    parser.add_argument("--target", type=str, default=os.environ.get("TARGET"))
+    parser.add_argument("--test-file", type=str, default=os.environ.get("TEST_FILE"))
 
     args, _ = parser.parse_known_args()
 

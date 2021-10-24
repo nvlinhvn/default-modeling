@@ -4,6 +4,7 @@ import argparse
 import joblib
 import os
 import pathlib
+import time
 
 import numpy as np
 import pandas as pd
@@ -30,23 +31,21 @@ def train():
 
     # Data, model, and output directories
     parser.add_argument("--model-dir", type=str, default=os.environ.get("MODEL_DIR"))
-    parser.add_argument("--datafolder", type=str, default="./train_data/")
+    parser.add_argument("--trainingfolder", type=str, default=os.environ.get("TRAINING_FOLDER"))
     parser.add_argument("--model-name", type=str, default=os.environ.get("MODEL_NAME"))
-    parser.add_argument("--train-file", type=str, default="train_set.csv")
+    parser.add_argument("--target", type=str, default=os.environ.get("TARGET"))
+    parser.add_argument("--train-file", type=str, default=os.environ.get("TRAIN_FILE"))
+    # RF parameters
     parser.add_argument("--n-estimators", type=int, default=100)
     parser.add_argument("--min-samples-leaf", type=int, default=10)
     parser.add_argument("--max-depth", type=int, default=10)  
     parser.add_argument("--random-state", type=int, default=1234)   
-    parser.add_argument(
-        "--target", type=str, default='default'
-    )
 
 
     args, _ = parser.parse_known_args()
-
-    print("Training Data Preparation")
-    print(os.path.join(args.datafolder, args.train_file))
-    train_df = pd.read_csv(os.path.join(args.datafolder, args.train_file))
+    start_time = time.time()
+    print(f"Training Data at {os.path.join(args.trainingfolder, args.train_file)}")
+    train_df = pd.read_csv(os.path.join(args.trainingfolder, args.train_file))
     y_train = train_df[args.target]
      
     print(args)
@@ -95,10 +94,10 @@ def train():
     ])
     
     ml_pipeline.fit(train_df[all_features], y_train)
-    print("Saving Pipeline ........")
     os.makedirs(args.model_dir, exist_ok=True)
-    joblib.dump(ml_pipeline, os.path.join(args.model_dir, args.model_name))
-    print("Congratulation! Finish.")    
+    saved_name = os.path.join(args.model_dir, args.model_name)
+    joblib.dump(ml_pipeline, saved_name)
+    print(f"Congratulation! Finish after {time.time() - start_time} s")    
          
 
 if __name__ == "__main__":
