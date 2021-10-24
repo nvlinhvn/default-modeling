@@ -142,7 +142,7 @@ ENTRYPOINT ["python3"]
 
 
 ```python
-First, run unit test in Image to make sure everything's OK
+!docker run -t default_model:latest -m unittest discover default_modeling
 ```
     Found the following test data
     default_modeling/tests/data/test_sample_1.csv
