@@ -158,7 +158,8 @@ ENTRYPOINT ["python3"]
 
 ```python
 !docker run -v /home/jupyter/train_data:/app/train_data default_model:latest \
-                                                        -m default_modeling.train --train-file train_set_1.csv
+                                                        -m default_modeling.train 
+                                                        --train-file train_set_1.csv
 ```
 
     extracting arguments
@@ -174,7 +175,8 @@ ENTRYPOINT ["python3"]
 
 ```python
 !docker run -v /home/jupyter/train_data:/app/train_data default_model:latest \
-                                                        -m default_modeling.train --train-file train_set_2.csv
+                                                        -m default_modeling.train 
+                                                        --train-file train_set_2.csv
 ```
 
     extracting arguments
