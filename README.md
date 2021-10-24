@@ -12,7 +12,7 @@
 
 - uuid: text User Id <br>
 - default: (or target) boolean (0, or 1) <br>
-- Categorical, and numerical features are defined in default_modeling.utils.preproc (function feature_definition)
+- Categorical, and numerical features are defined in `default_modeling.utils.preproc` (function `feature_definition`)
 
 ## Package Requirements:
 - pandas, numpy, category_encoders, sklearn, scipy, joblib
