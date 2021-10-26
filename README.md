@@ -19,6 +19,40 @@
 
 ## Folder Structure
 
+.
+            .
+            ├── Dockerfile
+            ├── Prototype_and_Experiment.ipynb
+            ├── README.md
+            ├── default_modeling
+            │   ├── __init__.py
+            │   ├── default_modeling
+            │   │   ├── __init__.py
+            │   │   ├── interface
+            │   │   │   ├── __init__.py
+            │   │   │   ├── predict.py
+            │   │   │   └── train.py
+            │   │   └── utils
+            │   │       ├── __init__.py
+            │   │       ├── load.py
+            │   │       └── preproc.py
+            │   ├── setup.py
+            │   ├── tests
+            │   │   ├── __init__.py
+            │   │   ├── data
+            │   │   │   └── test_sample_1.csv
+            │   │   ├── test_case_base.py
+            │   │   └── test_data_handling.py
+            ├── model
+            │   └── risk_model.joblib
+            ├── requirements.txt
+            ├── test_data
+            │   ├── test_set_1.csv
+            │   └── test_set_2.csv
+            └── train_data
+                ├── train_set_1.csv
+                └── train_set_2.csv
+
 ![alt](img/tree_structure.png)
 
 ## DockerFile Contents
