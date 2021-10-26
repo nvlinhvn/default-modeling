@@ -94,50 +94,60 @@ ENTRYPOINT ["python3"]
 
 
 ```python
-!docker run -v /home/jupyter/train_data:/app/train_data default_model:latest \
-                                                        -m default_modeling.train 
-                                                        --train-file train_set_2.csv
+!docker run -v /home/jupyter/train_data:/app/train_data \
+            -v /home/jupyter/model:/app/model \
+            default_model:latest -m default_modeling.default_modeling.interface.train \
+            --train-file train_set_2.csv
 ```
 
     extracting arguments
+    Namespace(max_depth=10, min_samples_leaf=10, model_dir='./model', model_name='risk_model', n_estimators=100, random_state=1234, target='default', train_file='train_set_2.csv', train_folder='./train_data')
     Training Data at ./train_data/train_set_2.csv
-    Namespace(max_depth=10, min_samples_leaf=10, model_dir='./default_modeling/default_modeling/interface/', model_name='risk_model.joblib', n_estimators=100, random_state=1234, target='default', train_file='train_set_2.csv', trainingfolder='./train_data')
     Total Input Features 39
     class weight {0: 0.5074062934696794, 1: 34.255076142131976}
-    Congratulation! Finish after 2.6793618202209473 s
+    Found existing model at: ./model/risk_model.joblib.
+    Overwriting ...
+    Congratulation! Saving model at ./model/risk_model.joblib. Finish after 2.718583345413208 s
 
 
 ## Now if some random forest hyperparameters needs to be modified:
 
 
 ```python
-!docker run -v /home/jupyter/train_data:/app/train_data default_model:latest -m default_modeling.train \
-                                                        --train-file train_set_2.csv \
-                                                        --n-estimators 200 \
-                                                        --max-depth 15 \
-                                                        --min-samples-leaf 20
+!docker run -v /home/jupyter/train_data:/app/train_data \
+            -v /home/jupyter/model:/app/model \
+            default_model:latest -m default_modeling.default_modeling.interface.train \
+            --train-file train_set_2.csv \
+            --n-estimators 200 \
+            --max-depth 15 \
+            --min-samples-leaf 20
 ```
 
     extracting arguments
+    Namespace(max_depth=15, min_samples_leaf=20, model_dir='./model', model_name='risk_model', n_estimators=200, random_state=1234, target='default', train_file='train_set_2.csv', train_folder='./train_data')
     Training Data at ./train_data/train_set_2.csv
-    Namespace(max_depth=15, min_samples_leaf=20, model_dir='./default_modeling/default_modeling/interface/', model_name='risk_model.joblib', n_estimators=200, random_state=1234, target='default', train_file='train_set_2.csv', trainingfolder='./train_data')
     Total Input Features 39
     class weight {0: 0.5074062934696794, 1: 34.255076142131976}
-    Congratulation! Finish after 3.2825217247009277 s
+    Found existing model at: ./model/risk_model.joblib.
+    Overwriting ...
+    Congratulation! Saving model at ./model/risk_model.joblib. Finish after 3.4293792247772217 s
 
 
 ## Use image to predict new data 1 `test_set_1.csv`
 
 
 ```python
-!docker run -v /home/jupyter/test_data:/app/test_data default_model:latest -m default_modeling.predict \
-                                                      --test-file test_set_1.csv
+!docker run -v /home/jupyter/test_data:/app/test_data  \
+            -v /home/jupyter/model:/app/model default_model:latest \
+            -m default_modeling.default_modeling.interface.predict \
+            --test-file test_set_1.csv         
 ```
 
     extracting arguments
-    Model path: ./default_modeling/default_modeling/interface/risk_model.joblib
+    Namespace(model_dir='./model', model_name='risk_model', target='default', test_file='test_set_1.csv', test_folder='./test_data')
+    Found model at: ./model/risk_model.joblib
     Predicting test_set_1.csv ....
-    Finish after 0.4421088695526123 s
+    Finish after 0.5522034168243408 s
     ...to csv ./test_data/test_set_1.csv
 
 
@@ -145,14 +155,17 @@ ENTRYPOINT ["python3"]
 
 
 ```python
-!docker run -v /home/jupyter/test_data:/app/test_data default_model:latest -m default_modeling.predict \
-                                                      --test-file test_set_2.csv
+!docker run -v /home/jupyter/test_data:/app/test_data  \
+            -v /home/jupyter/model:/app/model default_model:latest \
+            -m default_modeling.default_modeling.interface.predict \
+            --test-file test_set_2.csv                                                 
 ```
 
     extracting arguments
-    Model path: ./default_modeling/default_modeling/interface/risk_model.joblib
+    Namespace(model_dir='./model', model_name='risk_model', target='default', test_file='test_set_2.csv', test_folder='./test_data')
+    Found model at: ./model/risk_model.joblib
     Predicting test_set_2.csv ....
-    Finish after 0.23205804824829102 s
+    Finish after 0.3289515972137451 s
     ...to csv ./test_data/test_set_2.csv
 
 
