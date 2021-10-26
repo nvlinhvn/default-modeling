@@ -19,39 +19,44 @@
 
 ## Folder Structure
 
-.
-            .
-            ├── Dockerfile
-            ├── Prototype_and_Experiment.ipynb
-            ├── README.md
-            ├── default_modeling
-            │   ├── __init__.py
-            │   ├── default_modeling
-            │   │   ├── __init__.py
-            │   │   ├── interface
-            │   │   │   ├── __init__.py
-            │   │   │   ├── predict.py
-            │   │   │   └── train.py
-            │   │   └── utils
-            │   │       ├── __init__.py
-            │   │       ├── load.py
-            │   │       └── preproc.py
-            │   ├── setup.py
-            │   ├── tests
-            │   │   ├── __init__.py
-            │   │   ├── data
-            │   │   │   └── test_sample_1.csv
-            │   │   ├── test_case_base.py
-            │   │   └── test_data_handling.py
-            ├── model
-            │   └── risk_model.joblib
-            ├── requirements.txt
-            ├── test_data
-            │   ├── test_set_1.csv
-            │   └── test_set_2.csv
-            └── train_data
-                ├── train_set_1.csv
-                └── train_set_2.csv
+    extracting arguments
+    Namespace(model_dir='./model', model_name='risk_model', target='default', test_file='test_set_1.csv', test_folder='./test_data')
+    Found model at: ./model/risk_model.joblib
+    Predicting test_set_1.csv ....
+    Finish after 0.5522034168243408 s
+    ...to csv ./test_data/test_set_1.csv
+    .
+    ├── Dockerfile
+    ├── Prototype_and_Experiment.ipynb
+    ├── README.md
+    ├── default_modeling
+    │   ├── __init__.py
+    │   ├── default_modeling
+    │   │   ├── __init__.py
+    │   │   ├── interface
+    │   │   │   ├── __init__.py
+    │   │   │   ├── predict.py
+    │   │   │   └── train.py
+    │   │   └── utils
+    │   │       ├── __init__.py
+    │   │       ├── load.py
+    │   │       └── preproc.py
+    │   ├── setup.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── data
+    │   │   │   └── test_sample_1.csv
+    │   │   ├── test_case_base.py
+    │   │   └── test_data_handling.py
+    ├── model
+    │   └── risk_model.joblib
+    ├── requirements.txt
+    ├── test_data
+    │   ├── test_set_1.csv
+    │   └── test_set_2.csv
+    └── train_data
+        ├── train_set_1.csv
+        └── train_set_2.csv
 
 ![alt](img/tree_structure.png)
 
