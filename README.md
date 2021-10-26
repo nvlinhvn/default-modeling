@@ -23,10 +23,11 @@
 
 ## DockerFile Contents
 
-- My Local Working Directory named `/home/jupyter`. In this local folder:
+- My Local Working Directory named `/home/jupyter`. In this local working directory:
   * `train_data` folder contains different files for training random forest classifers
+  * `model` folder store the trained `.joblib` random forest, and the model will be loaded in this folder for prediction
   * `test_data` folder contains new data coming and waiting for prediction, prediction result will be locally stored inside the same file in this folder.
-- Container will mount to those local folders: `train_data` and `test_data`
+- Container will mount to those local folders: `train_data`, `test_data` and `model`
 - With this approach, we can conveniently play with every new data coming, by replace the files inside `train_data` and/or `test_data`
 ```python
 FROM python:3.8
