@@ -76,17 +76,18 @@ ENTRYPOINT ["python3"]
 
 
 ```python
-!docker run -v /home/jupyter/train_data:/app/train_data default_model:latest \
-                                                        -m default_modeling.train 
-                                                        --train-file train_set_1.csv
+!docker run -v /home/jupyter/train_data:/app/train_data \
+            -v /home/jupyter/model:/app/model \
+            default_model:latest -m default_modeling.default_modeling.interface.train \
+            --train-file train_set_1.csv
 ```
 
     extracting arguments
+    Namespace(max_depth=10, min_samples_leaf=10, model_dir='./model', model_name='risk_model', n_estimators=100, random_state=1234, target='default', train_file='train_set_1.csv', train_folder='./train_data')
     Training Data at ./train_data/train_set_1.csv
-    Namespace(max_depth=10, min_samples_leaf=10, model_dir='./default_modeling/default_modeling/interface/', model_name='risk_model.joblib', n_estimators=100, random_state=1234, target='default', train_file='train_set_1.csv', trainingfolder='./train_data')
     Total Input Features 39
     class weight {0: 0.5071993428787708, 1: 35.22539149888143}
-    Congratulation! Finish after 4.899581670761108 s
+    Congratulation! Saving model at ./model/risk_model.joblib. Finish after 5.14886212348938 s
 
 
 ## Now replace by a new training file: TRAIN_SET_2.csv (the previous joblib model will be overwritten)
