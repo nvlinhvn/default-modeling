@@ -60,7 +60,7 @@
   * `model` folder store the trained `.joblib` random forest, and the model will be loaded in this folder for prediction
   * `test_data` folder contains new data coming and waiting for prediction, prediction result will be locally stored inside the same file in this folder.
 - Container will mount to those local folders: `train_data`, `test_data` and `model`
-- With this approach, we can conveniently play with every new data coming, by replace the files inside `train_data` and/or `test_data`
+- With this approach, we can conveniently play with every new data coming, by replacing the files inside `train_data` and/or `test_data`
 ```python
 FROM python:3.8
 WORKDIR /app/
@@ -105,7 +105,7 @@ ENTRYPOINT ["python3"]
     OK
 
 
-## Train with the first file `TRAIN_SET_1.csv` to obtain the first model
+## Train with the first file `TRAIN_SET_1.csv` to obtain the first model. Remember to mount to local `train_data`, and `model`
 
 
 ```python
@@ -123,7 +123,7 @@ ENTRYPOINT ["python3"]
     Congratulation! Saving model at ./model/risk_model.joblib. Finish after 5.14886212348938 s
 
 
-## Now replace by a new training file: TRAIN_SET_2.csv (the previous joblib model will be overwritten)
+## Now replace by a new training file: TRAIN_SET_2.csv (the previous joblib model will be overwritten). Mount to local `train_data`, and `model`
 
 
 ```python
@@ -143,7 +143,7 @@ ENTRYPOINT ["python3"]
     Congratulation! Saving model at ./model/risk_model.joblib. Finish after 2.718583345413208 s
 
 
-## Now if some random forest hyperparameters needs to be modified:
+## Now if some random forest hyperparameters needs to be modified. Mount to local `train_data`, and `model`
 
 
 ```python
@@ -166,7 +166,7 @@ ENTRYPOINT ["python3"]
     Congratulation! Saving model at ./model/risk_model.joblib. Finish after 3.4293792247772217 s
 
 
-## Use image to predict new data 1 `test_set_1.csv`
+## Use image to predict new data 1 `test_set_1.csv`. Now, mount to local `test_data`, and `model`
 
 
 ```python
@@ -184,7 +184,7 @@ ENTRYPOINT ["python3"]
     ...to csv ./test_data/test_set_1.csv
 
 
-## Use image to predict new data 2 `test_set_2.csv`
+## Use image to predict new data 2 `test_set_2.csv`. Now, mount to local `test_data`, and `model`
 
 
 ```python
