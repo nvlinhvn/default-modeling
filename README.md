@@ -149,8 +149,9 @@ ENTRYPOINT ["python3"]
     class weight {0: 0.5071993428787708, 1: 35.22539149888143}
     Congratulation! Saving model at ./model/risk_model.joblib. Finish after 5.14886212348938 s
 
+### It's reported running Cython takes only 4.3 s in training, which is 15% faster.
 
-## Now replace by a new training file: TRAIN_SET_2.csv (the previous joblib model will be overwritten). Mount to local `train_data`, and `model`
+## Now if we replace by a new training file (continuous training): TRAIN_SET_2.csv (the previous joblib model will be overwritten).
 
 
 ```python
@@ -170,7 +171,7 @@ ENTRYPOINT ["python3"]
     Congratulation! Saving model at ./model/risk_model.joblib. Finish after 2.718583345413208 s
 
 
-## Now if some random forest hyperparameters needs to be modified. Mount to local `train_data`, and `model`
+## Now if we would like to tune or modify random forest hyperparameters.
 
 
 ```python
@@ -218,8 +219,8 @@ ENTRYPOINT ["python3"]
     Finish after 0.5522034168243408 s
     ...to csv ./test_data/test_set_1.csv
 
-
-## Use image to predict new data 2 `test_set_2.csv`. Now, mount to local `test_data`, and `model`
+### Running Cython takes only 0.4 s in prediction, which is 20% faster.
+## Use image to predict new data 2 `test_set_2.csv`.
 
 
 ```python
@@ -236,7 +237,7 @@ ENTRYPOINT ["python3"]
     Finish after 0.3289515972137451 s
     ...to csv ./test_data/test_set_2.csv
 
-
+### In general, running Cython modules fasten the process 15 - 20%, compared with pure Python modules
 
 ## We have prediction in local folder test_data. Evaluate with Metrics
 
