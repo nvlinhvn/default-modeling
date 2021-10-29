@@ -21,13 +21,6 @@
 
     .
     ├── Dockerfile
-    ├── build
-    │   └── temp.linux-x86_64-3.7
-    │       └── default_modeling
-    │           └── default_modeling
-    │               └── interface
-    │                   ├── predictor.o
-    │                   └── trainer.o
     ├── default_modeling
     │   ├── __init__.py
     │   ├── default_modeling
