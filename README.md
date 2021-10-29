@@ -54,7 +54,9 @@
     │   │   └── test_data_handling.py
     ├── model
     │   └── risk_model.joblib
-    ├── prototype.ipynb
+    ├── prototype
+    │   ├── prototype_cython.ipynb
+    │   └── prototype_python.ipynb
     ├── requirements.txt
     ├── test_data
     │   ├── test_set_1.csv
