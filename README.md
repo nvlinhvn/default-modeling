@@ -52,8 +52,6 @@
     │   │   │   └── test_sample_1.csv
     │   │   ├── test_case_base.py
     │   │   └── test_data_handling.py
-    │   ├── train.cpython-37m-x86_64-linux-gnu.so
-    │   └── trainer.cpython-37m-x86_64-linux-gnu.so
     ├── model
     │   └── risk_model.joblib
     ├── prototype.ipynb
