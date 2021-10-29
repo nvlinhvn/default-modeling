@@ -16,7 +16,7 @@
 
 ## Adjustment:
 - If you want to run the experiment with your data:
-    * Replace csv in both `train_data` and `test_data` by your csv. (**Optional**: also change test file `test_sample_1.csv` in `default_modeling/default_modeling/tests/data/` for unit test)
+    * Replace csv in both `train_data` and `test_data` by your csv. (**Optional**: also change test file `test_sample_1.csv` in `default_modeling/default_modeling/tests/data/` for unit test). Each row of your csv should correspond to unique User ID.
     * Redefine categorical, numerical features in `default_modeling/default_modeling/utils/preproc.py` (function `feature_definition`) based on your definition
     * Change `TARGET=default` in Dockerfile to `TARGET={your target variable}`
 
