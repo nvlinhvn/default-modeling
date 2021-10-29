@@ -81,7 +81,6 @@
 - With this approach, we can conveniently play with every new data coming, by replacing the files inside `train_data` and/or `test_data`
 - Container is built both in pure Python and Cython
 ```python
-%%writefile Dockerfile
 FROM python:3.8
 WORKDIR /app/
 
