@@ -136,8 +136,8 @@ ENTRYPOINT ["python3"]
 ```
 ### or Run with Cython module (called with interface `launch_training.py`)
 ```python
-!docker run -v /home/jupyter/Cython/train_data:/app/train_data \
-            -v /home/jupyter/Cython/model:/app/model default_model:latest \
+!docker run -v /home/jupyter/train_data:/app/train_data \
+            -v /home/jupyter/model:/app/model default_model:latest \
             -m default_modeling.default_modeling.interface.launch_training \
             --train-file train_set_1.csv
 ```
@@ -202,11 +202,11 @@ ENTRYPOINT ["python3"]
             -m default_modeling.default_modeling.interface.predict \
             --test-file test_set_1.csv         
 ```
-### Or Call Cython module with interface `launch_predicting.py`
+### Or Run Cython module with interface `launch_predicting.py`
 
 ```python
-!docker run -v /home/jupyter/Cython/test_data:/app/test_data \
-            -v /home/jupyter/Cython/model:/app/model default_model:latest \
+!docker run -v /home/jupyter/test_data:/app/test_data \
+            -v /home/jupyter/model:/app/model default_model:latest \
             -m default_modeling.default_modeling.interface.launch_predicting \
             --test-file test_set_1.csv
 ```
