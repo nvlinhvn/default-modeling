@@ -15,10 +15,40 @@
 - Categorical, and numerical features are defined in `default_modeling.utils.preproc` (function `feature_definition`)
 
 ## Adjustment:
-- If you want to run the experiment with your data:
-    * Replace csv in both `train_data` and `test_data` by your csv. (**Optional**: also change test file `test_sample_1.csv` in `default_modeling/default_modeling/tests/data/` for unit test). Each row of your csv should correspond to unique User ID.
+- If you want to run the experiment with your data for the purpose of binary classification:
+    * Replace csv in both `train_data` and `test_data` by your csv. (**Optional**: also change test file `test_sample_1.csv` in `default_modeling/default_modeling/tests/data/` for unit test). Each row of your csv should correspond to unique User ID .
     * Redefine categorical, numerical features in `default_modeling/default_modeling/utils/preproc.py` (function `feature_definition`) based on your definition
     * Change `TARGET=default` in Dockerfile to `TARGET={your target variable}`
+    * Data example can be seen below
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>UUID (User id)</th>
+      <th>Feature 1</th>
+      <th>...</th>
+      <th>Feature N</th>
+      <th>Target (binary)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>001</th>
+      <td>100</td>
+      <td>...</td>
+      <td>"AAA"</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>002</th>
+      <td>300</td>
+      <td>...</td>
+      <td>"BBB"</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ## Package Requirements:
 - pandas, numpy, category_encoders, sklearn, scipy, joblib, Cython
