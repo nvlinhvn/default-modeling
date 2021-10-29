@@ -45,8 +45,6 @@
     │   │       ├── __init__.py
     │   │       ├── load.py
     │   │       └── preproc.py
-    │   ├── predict.cpython-37m-x86_64-linux-gnu.so
-    │   ├── predictor.cpython-37m-x86_64-linux-gnu.so
     │   ├── setup.py
     │   ├── tests
     │   │   ├── __init__.py
