@@ -235,7 +235,7 @@ ENTRYPOINT ["python3"]
     Finish after 0.3289515972137451 s
     ...to csv ./test_data/test_set_2.csv
 
-### In general, Cythonizing the modules could fasten the process 15 - 20%, compared with pure Python modules
+## In general, Cythonizing the modules could fasten the process 15 - 20%, compared with pure Python modules
 
 ## We have prediction in local folder test_data. Evaluate with Metrics
 
