@@ -38,11 +38,9 @@
     │   │   │   ├── launch_training.py
     │   │   │   ├── predict.py
     │   │   │   ├── predictor.c
-    │   │   │   ├── predictor.cpython-37m-x86_64-linux-gnu.so
     │   │   │   ├── predictor.pyx
     │   │   │   ├── train.py
     │   │   │   ├── trainer.c
-    │   │   │   ├── trainer.cpython-37m-x86_64-linux-gnu.so
     │   │   │   └── trainer.pyx
     │   │   └── utils
     │   │       ├── __init__.py
