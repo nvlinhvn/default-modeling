@@ -128,8 +128,15 @@ ENTRYPOINT ["python3"]
 
 ```python
 !docker run -v /home/jupyter/train_data:/app/train_data \
-            -v /home/jupyter/model:/app/model \
-            default_model:latest -m default_modeling.default_modeling.interface.train \
+            -v /home/jupyter/model:/app/model default_model:latest \
+            -m default_modeling.default_modeling.interface.train \
+            --train-file train_set_1.csv
+```
+### or Run with Cython module (called from `lauch_training.py`)
+```python
+!docker run -v /home/jupyter/Cython/train_data:/app/train_data \
+            -v /home/jupyter/Cython/model:/app/model default_model:latest \
+            -m default_modeling.default_modeling.interface.launch_training \
             --train-file train_set_1.csv
 ```
 
@@ -192,6 +199,14 @@ ENTRYPOINT ["python3"]
             -v /home/jupyter/model:/app/model default_model:latest \
             -m default_modeling.default_modeling.interface.predict \
             --test-file test_set_1.csv         
+```
+### Or Call Cython module with `lauch.predict
+
+```python
+!docker run -v /home/jupyter/Cython/test_data:/app/test_data \
+            -v /home/jupyter/Cython/model:/app/model default_model:latest \
+            -m default_modeling.default_modeling.interface.launch_predicting \
+            --test-file test_set_1.csv
 ```
 
     extracting arguments
