@@ -132,7 +132,7 @@ ENTRYPOINT ["python3"]
             -m default_modeling.default_modeling.interface.train \
             --train-file train_set_1.csv
 ```
-### or Run with Cython module (called from `lauch_training.py`)
+### or Run with Cython module (called with interface `launch_training.py`)
 ```python
 !docker run -v /home/jupyter/Cython/train_data:/app/train_data \
             -v /home/jupyter/Cython/model:/app/model default_model:latest \
@@ -200,7 +200,7 @@ ENTRYPOINT ["python3"]
             -m default_modeling.default_modeling.interface.predict \
             --test-file test_set_1.csv         
 ```
-### Or Call Cython module with `lauch.predict
+### Or Call Cython module with interface `launch_predicting.py`
 
 ```python
 !docker run -v /home/jupyter/Cython/test_data:/app/test_data \
