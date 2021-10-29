@@ -1,3 +1,4 @@
+Cython
 pandas
 numpy
 category_encoders
