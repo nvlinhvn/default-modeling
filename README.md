@@ -16,9 +16,9 @@
 
 ## Adjustment:
 - If you want to run the experiment with your data:
-    * 1. Replace csv in both `train_data` and `test_data` by your csv. (Optional: also change test file `test_sample_1.csv` in `default_modeling/default_modeling/tests/data/` for unit test)
-    * 2. Redefine categorical, numerical features in `default_modeling/default_modeling/utils/preproc.py` (function `feature_definition`) based on your definition
-    * 3. Change `TARGET=default` in Dockerfile to `TARGET={your target variable}`
+    * Replace csv in both `train_data` and `test_data` by your csv. (Optional: also change test file `test_sample_1.csv` in `default_modeling/default_modeling/tests/data/` for unit test)
+    * Redefine categorical, numerical features in `default_modeling/default_modeling/utils/preproc.py` (function `feature_definition`) based on your definition
+    * Change `TARGET=default` in Dockerfile to `TARGET={your target variable}`
 
 ## Package Requirements:
 - pandas, numpy, category_encoders, sklearn, scipy, joblib, Cython
