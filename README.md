@@ -15,7 +15,7 @@
 - Categorical, and numerical features are defined in `default_modeling.utils.preproc` (function `feature_definition`)
 
 ## Package Requirements:
-- pandas, numpy, category_encoders, sklearn, scipy, joblib
+- pandas, numpy, category_encoders, sklearn, scipy, joblib, Cython
 
 ## Folder Structure
 
@@ -79,7 +79,9 @@
   * `test_data` folder contains new data coming and waiting for prediction, prediction result will be locally stored inside the same file in this folder.
 - Container will mount to those local folders: `train_data`, `test_data` and `model`
 - With this approach, we can conveniently play with every new data coming, by replacing the files inside `train_data` and/or `test_data`
+- Container is built both in pure Python and Cython
 ```python
+%%writefile Dockerfile
 FROM python:3.8
 WORKDIR /app/
 
@@ -97,6 +99,7 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 COPY default_modeling default_modeling
+RUN python3 -m default_modeling.setup build_ext --inplace
 
 ENTRYPOINT ["python3"]
 ```
