@@ -215,7 +215,7 @@ ENTRYPOINT ["python3"]
     Congratulation! Saving model at ./model/risk_model.joblib. Finish after 3.684312582015991 s
 
 
-## And predict e.g: `test_data/test_set_1.csv`. Now, mount to local `test_data`, and `model`
+## And predict selected file, e.g: `test_data/test_set_1.csv`. Now, mount to local `test_data`, and `model`
 
 
 ```python
