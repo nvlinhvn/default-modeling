@@ -2,25 +2,15 @@ import argparse
 import joblib
 import os
 import time
-import pandas as pd
-from scipy.stats import ks_2samp 
-from sklearn import metrics
-import numpy as np
-
-from ..utils.preproc import CategoricalEncoder
-from ..utils.preproc import NumericEncoder
-from ..utils.preproc import feature_definition
-
-import argparse
-import joblib
-import os
-import time
 import errno
 
 import pandas as pd
 from scipy.stats import ks_2samp 
 from sklearn import metrics
 import numpy as np
+
+import pyximport
+pyximport.install()
 
 from ..utils.preproc import CategoricalEncoder
 from ..utils.preproc import NumericEncoder

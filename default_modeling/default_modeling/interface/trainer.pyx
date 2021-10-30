@@ -14,6 +14,9 @@ from sklearn.utils import class_weight
 from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.compose import ColumnTransformer
 
+import pyximport
+pyximport.install()
+
 from ..utils.preproc import CategoricalEncoder
 from ..utils.preproc import NumericEncoder
 from ..utils.preproc import feature_definition

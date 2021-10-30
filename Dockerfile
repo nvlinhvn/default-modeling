@@ -12,9 +12,9 @@ ENV MODEL_NAME=risk_model
 ENV TARGET=default
 
 COPY requirements.txt .
+COPY default_modeling default_modeling
 
 RUN pip install -r requirements.txt
-COPY default_modeling default_modeling
-RUN python3 -m default_modeling.setup build_ext --inplace
+RUN python3 -m default_modeling.setup build
 
 ENTRYPOINT ["python3"]

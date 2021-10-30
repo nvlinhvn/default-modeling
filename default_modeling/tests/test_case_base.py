@@ -8,6 +8,9 @@ import joblib
 import pandas as pd
 import pathlib
 
+import pyximport
+pyximport.install()
+
 from default_modeling.utils.load import load_data
 
 LOGGER = logging.getLogger(__name__)
