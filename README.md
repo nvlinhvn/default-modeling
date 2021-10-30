@@ -116,7 +116,9 @@
    * Random forest parameters as sklearn.RandomForestClassifier:
       * n-estimators
       * max-depth
-      * min-samples-leaf 20
+      * min-samples-leaf
+      * random-state
+
 ### TRAIN (train file `train_data/train_set_1.csv`)
 
 ```python
