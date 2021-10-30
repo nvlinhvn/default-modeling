@@ -12,7 +12,7 @@
 
 - uuid: text User Id <br>
 - default: (or target) boolean (0, or 1) <br>
-- Categorical, and numerical features are defined in `default_modeling.utils.preproc` (function `feature_definition`)
+- Categorical, and numerical features are defined in `default_modeling.utils.preproc.pyx` (function `feature_definition`)
 
 ## Adjustment:
 - If you want to run the experiment with your data for the purpose of binary classification:
