@@ -106,6 +106,18 @@
 !python3 -m unittest discover default_modeling
 ```
 ### TRAIN (train file `train_data/train_set_1.csv`)
+   * model-dir: folder to store trained model (`model` as seen in this repo)
+   * model-name: name of trained .joblib model (`risk_model` saved in folder `model` in this case)
+   * train-folder: folder contains train csv (`train_data` in this repo)
+   * train-file: selected file in train-folder (`train_set_1.csv` in this case)
+   * target: target columns from data
+   * test-folder: folder contains test csv (`test_data` in this repo)
+   * test-file: selected file in test-folder (`test_set_1.csv` in this case)
+   * Random forest parameters as sklearn.RandomForestClassifier:
+      * n-estimators
+      * max-depth
+      * min-samples-leaf 20
+
 ```python
 !python3 -m default_modeling.default_modeling.interface.launch_trainer \
                                                 --model-dir ./model \
