@@ -96,7 +96,8 @@
         └── train_set_2.csv
 
 ## Run Locally
-### SETUP
+### After cloning this repository, SETUP
+
 ```python
 !python3 -m default_modeling.setup build
 ```
